@@ -1,9 +1,12 @@
 import type { Metadata } from "next";
 import { Building2, Handshake, SlidersHorizontal, LayoutGrid, Users, Gauge } from "lucide-react";
 import { PageHero } from "@/components/page-hero";
+import { SectionHeading } from "@/components/section-heading";
 import { DifferenceGrid, type DifferenceItem } from "@/components/difference-grid";
+import { CaretakingDuties } from "@/components/residential/caretaking-duties";
 import { RelatedServices } from "@/components/related-services";
 import { QuoteCta } from "@/components/quote-cta";
+import { Reveal } from "@/components/motion";
 
 export const metadata: Metadata = {
   title: "Residential Strata Caretaking Services",
@@ -60,26 +63,23 @@ export default function StrataCaretakingServicesPage() {
         image="/images/high-rise-building-1829191-1.jpg"
         imageAlt="High-rise residential building at dusk"
       />
-      <section className="py-20">
-        <div className="mx-auto max-w-3xl px-4 text-center text-muted-foreground sm:px-6 lg:px-8">
-          <p>
-            Some properties require on-site administrative support in
-            addition to janitorial services. Our caretakers become the
-            go-to source for janitorial functions, as well as a wide range
-            of administrative duties &mdash; handling resident requests,
-            bookings, move scheduling, trades coordination and access,
-            bylaw infractions, and emergencies.
-          </p>
-          <p className="mt-4">
-            Most importantly, the Mint Clean team understands the
-            importance of working closely with and supporting the Strata
-            Manager, building supervisors, concierge and other site staff
-            to maintain the upkeep and operational success of each
-            property. We understand that properties can run much better
-            when we all work together.
-          </p>
+
+      <section className="py-20 sm:py-28">
+        <div className="mx-auto mb-14 max-w-7xl px-4 sm:px-6 lg:px-8">
+          <Reveal>
+            <SectionHeading
+              eyebrow="Your Trusted Operations Partner"
+              title="More than cleaning — a go-to source on-site"
+              description="Some properties need on-site administrative support alongside janitorial services. Here's what our caretakers handle day to day."
+            />
+          </Reveal>
         </div>
+        <CaretakingDuties
+          image="/images/high-rise-building-1829191-2.jpg"
+          imageAlt="Residential strata building at night"
+        />
       </section>
+
       <DifferenceGrid items={differenceItems} />
       <RelatedServices
         title="Explore more residential strata services"

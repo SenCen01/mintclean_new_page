@@ -6,26 +6,14 @@ import {
   LayoutGrid,
   Users,
   Gauge,
-  DoorOpen,
-  Armchair,
-  ArrowUpDown,
-  Footprints,
-  Droplets,
-  Dumbbell,
-  Home as HomeIcon,
-  BedDouble,
-  PartyPopper,
-  Flower2,
-  Trash2,
-  CarFront,
-  Trees,
-  Building,
 } from "lucide-react";
 import { PageHero } from "@/components/page-hero";
 import { DifferenceGrid, type DifferenceItem } from "@/components/difference-grid";
 import { SectionHeading } from "@/components/section-heading";
+import { AreaCoverage } from "@/components/residential/area-coverage";
 import { RelatedServices } from "@/components/related-services";
 import { QuoteCta } from "@/components/quote-cta";
+import { Reveal } from "@/components/motion";
 
 export const metadata: Metadata = {
   title: "Residential Strata Janitorial Services",
@@ -72,24 +60,6 @@ const differenceItems: DifferenceItem[] = [
   },
 ];
 
-const areas = [
-  { icon: DoorOpen, label: "Entrances" },
-  { icon: Armchair, label: "Lobbies" },
-  { icon: ArrowUpDown, label: "Elevators" },
-  { icon: Building, label: "Common Hallways & Corridors" },
-  { icon: Droplets, label: "Washrooms" },
-  { icon: Footprints, label: "Stairwells" },
-  { icon: Dumbbell, label: "Gym Facilities" },
-  { icon: HomeIcon, label: "Amenity Rooms (All Types)" },
-  { icon: BedDouble, label: "Strata-Owned Guest Suites" },
-  { icon: PartyPopper, label: "Party Rooms" },
-  { icon: Flower2, label: "Common Area Décor" },
-  { icon: Trash2, label: "Garbage Rooms" },
-  { icon: CarFront, label: "Parkade Landing Areas" },
-  { icon: Trees, label: "Outdoor Amenities & Courtyards" },
-  { icon: Building2, label: "Property Exterior" },
-];
-
 export default function ResidentialJanitorialServicesPage() {
   return (
     <>
@@ -101,19 +71,17 @@ export default function ResidentialJanitorialServicesPage() {
         imageAlt="Residential strata building exterior"
       />
       <DifferenceGrid items={differenceItems} />
-      <section className="py-20">
+      <section className="py-20 sm:py-28">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <SectionHeading eyebrow="Coverage" title="Areas We Service" />
-          <div className="mt-12 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-5">
-            {areas.map((area) => (
-              <div
-                key={area.label}
-                className="flex flex-col items-center gap-2 rounded-xl border border-border bg-card p-5 text-center"
-              >
-                <area.icon className="size-5 text-primary" />
-                <span className="text-sm font-medium text-foreground">{area.label}</span>
-              </div>
-            ))}
+          <Reveal>
+            <SectionHeading
+              eyebrow="Coverage"
+              title="Areas We Service"
+              description="From the moment someone steps through the front door to the parkade and courtyard beyond, every common area is covered."
+            />
+          </Reveal>
+          <div className="mt-14">
+            <AreaCoverage />
           </div>
         </div>
       </section>
