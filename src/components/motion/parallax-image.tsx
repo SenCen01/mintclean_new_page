@@ -24,6 +24,7 @@ export function ParallaxImage({
   return (
     <div ref={ref} className={wrapperClassName}>
       <motion.div style={{ y }} className="absolute inset-0 -top-[10%] -bottom-[10%]">
+        {/* eslint-disable-next-line jsx-a11y/alt-text -- alt is required by ImageProps and supplied via the spread */}
         <Image {...imageProps} fill />
       </motion.div>
     </div>
