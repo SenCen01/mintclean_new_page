@@ -55,7 +55,7 @@ export default function AboutPage() {
       <section className="py-20">
         <div className="mx-auto grid max-w-7xl gap-12 px-4 sm:px-6 lg:grid-cols-2 lg:px-8">
           <div className="flex flex-col gap-5 text-muted-foreground">
-            <h2 className="text-2xl font-bold text-foreground sm:text-3xl">
+            <h2 className="font-heading text-2xl font-extrabold text-foreground sm:text-3xl">
               Reliable building maintenance, done right
             </h2>
             <p>
@@ -79,7 +79,7 @@ export default function AboutPage() {
             </Link>
           </div>
           <div className="rounded-2xl border border-border bg-muted/40 p-8">
-            <h3 className="text-lg font-semibold text-foreground">
+            <h3 className="font-heading text-lg font-bold text-foreground">
               {site.legalName}
             </h3>
             <dl className="mt-4 flex flex-col gap-3 text-sm">
@@ -118,7 +118,7 @@ export default function AboutPage() {
                 <div className="flex size-11 items-center justify-center rounded-xl bg-primary/10 text-primary">
                   <item.icon className="size-5.5" />
                 </div>
-                <h3 className="font-semibold text-foreground">{item.title}</h3>
+                <h3 className="font-heading font-bold text-foreground">{item.title}</h3>
                 <p className="text-sm text-muted-foreground">{item.description}</p>
               </div>
             ))}
@@ -128,7 +128,7 @@ export default function AboutPage() {
 
       <section id="careers" className="scroll-mt-24 py-20">
         <div className="mx-auto max-w-3xl px-4 text-center sm:px-6 lg:px-8">
-          <h2 className="text-2xl font-bold text-foreground sm:text-3xl">Careers</h2>
+          <h2 className="font-heading text-2xl font-extrabold text-foreground sm:text-3xl">Careers</h2>
           <p className="mt-4 text-muted-foreground">
             Our employees are integral to our company&apos;s success. At Mint
             Clean, we emphasize collaborative team work and strive to create

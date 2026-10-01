@@ -32,9 +32,9 @@ export function SiteHeader() {
   const [servicesOpen, setServicesOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-border/70 bg-background/90 backdrop-blur supports-[backdrop-filter]:bg-background/70">
-      <div className="mx-auto flex h-18 max-w-7xl items-center justify-between gap-4 px-4 sm:px-6 lg:px-8">
-        <Link href="/" className="flex items-center py-3">
+    <header className="sticky top-0 z-50 border-b border-white/10 bg-brand-dark text-white">
+      <div className="mx-auto flex h-20 max-w-7xl items-center justify-between gap-4 px-4 sm:px-6 lg:px-8">
+        <Link href="/" className="flex items-center py-2">
           <Logo />
         </Link>
 
@@ -46,7 +46,7 @@ export function SiteHeader() {
           >
             <button
               className={cn(
-                "flex items-center gap-1 rounded-md px-3 py-2 text-sm font-medium text-foreground/80 transition-colors hover:bg-muted hover:text-foreground",
+                "flex items-center gap-1 rounded-md px-3 py-2 text-sm font-medium text-white/80 transition-colors hover:bg-white/10 hover:text-white",
                 pathname.includes("services") && "text-primary"
               )}
             >
@@ -55,7 +55,7 @@ export function SiteHeader() {
             </button>
             {servicesOpen && (
               <div className="absolute left-1/2 top-full w-[560px] -translate-x-1/2 pt-2">
-                <div className="grid grid-cols-2 gap-6 rounded-2xl border border-border bg-popover p-6 shadow-xl">
+                <div className="grid grid-cols-2 gap-6 rounded-2xl border border-border bg-popover p-6 text-popover-foreground shadow-xl">
                   <div>
                     <Link
                       href="/commercial-services"
@@ -112,7 +112,7 @@ export function SiteHeader() {
               key={link.href}
               href={link.href}
               className={cn(
-                "rounded-md px-3 py-2 text-sm font-medium text-foreground/80 transition-colors hover:bg-muted hover:text-foreground",
+                "rounded-md px-3 py-2 text-sm font-medium text-white/80 transition-colors hover:bg-white/10 hover:text-white",
                 pathname === link.href && "text-primary"
               )}
             >
@@ -124,7 +124,7 @@ export function SiteHeader() {
         <div className="hidden items-center gap-4 lg:flex">
           <a
             href={site.phoneHref}
-            className="flex items-center gap-2 text-sm font-semibold text-foreground hover:text-primary"
+            className="flex items-center gap-2 text-sm font-semibold text-white hover:text-primary"
           >
             <Phone className="size-4" />
             {site.phone}
@@ -134,14 +134,20 @@ export function SiteHeader() {
 
         <Sheet>
           <SheetTrigger
-            render={<Button variant="ghost" size="icon" className="lg:hidden" />}
+            render={
+              <Button
+                variant="ghost"
+                size="icon"
+                className="text-white hover:bg-white/10 hover:text-white lg:hidden"
+              />
+            }
           >
             <Menu className="size-5" />
           </SheetTrigger>
           <SheetContent side="right" className="flex w-[85vw] max-w-sm flex-col gap-0 p-0">
-            <SheetHeader className="border-b border-border px-6 py-5">
+            <SheetHeader className="border-b border-white/10 bg-brand-dark px-6 py-5">
               <SheetTitle className="sr-only">Main menu</SheetTitle>
-              <Logo className="text-xl" />
+              <Logo />
             </SheetHeader>
             <nav className="flex flex-1 flex-col gap-1 overflow-y-auto px-4 py-4">
               <SheetClose

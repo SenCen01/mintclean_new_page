@@ -26,7 +26,7 @@ export default function ContactPage() {
         <div className="mx-auto grid max-w-5xl gap-8 px-4 sm:px-6 sm:grid-cols-3 lg:px-8">
           <div className="flex flex-col items-center gap-3 rounded-2xl border border-border bg-card p-8 text-center">
             <MapPin className="size-6 text-primary" />
-            <h3 className="font-semibold text-foreground">{site.legalName}</h3>
+            <h3 className="font-heading font-bold text-foreground">{site.legalName}</h3>
             <p className="text-sm text-muted-foreground">
               {site.address.line1}
               <br />
@@ -38,7 +38,7 @@ export default function ContactPage() {
             className="flex flex-col items-center gap-3 rounded-2xl border border-border bg-card p-8 text-center transition-colors hover:border-primary/40"
           >
             <Phone className="size-6 text-primary" />
-            <h3 className="font-semibold text-foreground">Phone</h3>
+            <h3 className="font-heading font-bold text-foreground">Phone</h3>
             <p className="text-sm text-muted-foreground">{site.phone}</p>
           </a>
           <a
@@ -46,7 +46,7 @@ export default function ContactPage() {
             className="flex flex-col items-center gap-3 rounded-2xl border border-border bg-card p-8 text-center transition-colors hover:border-primary/40"
           >
             <Mail className="size-6 text-primary" />
-            <h3 className="font-semibold text-foreground">Email</h3>
+            <h3 className="font-heading font-bold text-foreground">Email</h3>
             <p className="text-sm text-muted-foreground">{site.email}</p>
           </a>
         </div>
@@ -54,7 +54,7 @@ export default function ContactPage() {
 
       <section id="careers" className="scroll-mt-24 bg-muted/40 py-20">
         <div className="mx-auto max-w-3xl px-4 text-center sm:px-6 lg:px-8">
-          <h2 className="text-2xl font-bold text-foreground sm:text-3xl">Careers</h2>
+          <h2 className="font-heading text-2xl font-extrabold text-foreground sm:text-3xl">Careers</h2>
           <p className="mt-4 text-muted-foreground">
             Valuing our employees is an integral part of the success of our
             company. At Mint Clean, we emphasize collaborative team work and

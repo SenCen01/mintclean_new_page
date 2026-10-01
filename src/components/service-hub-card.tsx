@@ -30,7 +30,7 @@ export function ServiceHubCard({
         />
       </div>
       <div className="flex flex-1 flex-col gap-2 p-6">
-        <h3 className="text-xl font-semibold text-foreground">{title}</h3>
+        <h3 className="font-heading text-xl font-bold text-foreground">{title}</h3>
         <p className="flex-1 text-sm text-muted-foreground">{description}</p>
         <span className="flex items-center gap-1 text-sm font-semibold text-primary">
           Learn more

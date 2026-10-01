@@ -68,7 +68,7 @@ export default function SnowRemovalPage() {
               <div className="flex size-12 items-center justify-center rounded-xl bg-primary/10 text-primary">
                 <stat.icon className="size-6" />
               </div>
-              <h2 className="text-lg font-semibold text-foreground">{stat.title}</h2>
+              <h2 className="font-heading text-lg font-bold text-foreground">{stat.title}</h2>
             </div>
           ))}
         </div>
@@ -76,7 +76,7 @@ export default function SnowRemovalPage() {
 
       <section className="bg-muted/40 py-20">
         <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
-          <h3 className="text-2xl font-bold text-foreground sm:text-3xl">
+          <h3 className="font-heading text-2xl font-extrabold text-foreground sm:text-3xl">
             Local Snow Removal + Salting in Lower Vancouver
           </h3>
           <div className="mt-6 flex flex-col gap-4 text-muted-foreground">
@@ -117,7 +117,7 @@ export default function SnowRemovalPage() {
               <div key={item.title} className="flex gap-3 rounded-2xl border border-border bg-card p-5">
                 <CheckCircle2 className="mt-0.5 size-5 shrink-0 text-primary" />
                 <div>
-                  <h3 className="font-semibold text-foreground">{item.title}</h3>
+                  <h3 className="font-heading font-bold text-foreground">{item.title}</h3>
                   <p className="mt-1 text-sm text-muted-foreground">{item.description}</p>
                 </div>
               </div>
@@ -133,7 +133,7 @@ export default function SnowRemovalPage() {
       <section id="quote" className="scroll-mt-24 bg-muted/40 py-20">
         <div className="mx-auto max-w-2xl px-4 sm:px-6 lg:px-8">
           <div className="mb-10 text-center">
-            <h2 className="text-3xl font-bold tracking-tight text-foreground">
+            <h2 className="font-heading text-3xl font-extrabold tracking-tight text-foreground">
               Request a free quote or talk to us in our chat
             </h2>
           </div>

@@ -51,7 +51,11 @@ export default function Home() {
         />
         <div className="absolute inset-0 bg-gradient-to-r from-brand-dark/95 via-brand-dark/75 to-brand-dark/30" />
         <div className="relative mx-auto flex w-full max-w-7xl flex-col gap-7 px-4 py-24 sm:px-6 lg:px-8">
-          <h1 className="max-w-2xl text-4xl font-bold tracking-tight text-balance sm:text-6xl">
+          <span className="flex w-fit items-center gap-2 rounded-full border border-white/15 bg-white/10 px-4 py-1.5 text-xs font-semibold tracking-wide uppercase backdrop-blur">
+            <span className="size-1.5 rounded-full bg-primary" />
+            Fully Insured &amp; Bonded
+          </span>
+          <h1 className="max-w-2xl font-heading text-5xl font-black tracking-tight text-balance sm:text-7xl">
             Taking care of your spaces so you can focus on the main things
           </h1>
           <p className="max-w-xl text-lg text-white/80">

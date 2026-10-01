@@ -17,7 +17,9 @@ export function QuoteCta() {
           className="absolute -right-24 -bottom-24 size-96 rounded-full bg-primary/15 blur-3xl"
         />
         <div className="relative mx-auto flex max-w-4xl flex-col items-center gap-6 px-4 text-center sm:px-6 lg:px-8">
-          <h2 className="text-balance text-2xl font-bold sm:text-3xl">{site.serviceArea}</h2>
+          <h2 className="font-heading text-balance text-2xl font-extrabold sm:text-3xl">
+            {site.serviceArea}
+          </h2>
           <Link href="#quote" className={cn(buttonVariants({ size: "lg" }))}>
             Get A Free Quote
           </Link>
@@ -26,7 +28,7 @@ export function QuoteCta() {
       <section id="quote" className="scroll-mt-24 bg-background py-20">
         <div className="mx-auto max-w-2xl px-4 sm:px-6 lg:px-8">
           <div className="mb-10 text-center">
-            <h2 className="text-3xl font-bold tracking-tight text-foreground">
+            <h2 className="font-heading text-3xl font-extrabold tracking-tight text-foreground">
               Request A Free Quote
             </h2>
             <p className="mt-2 text-muted-foreground">

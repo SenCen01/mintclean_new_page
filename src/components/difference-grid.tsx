@@ -27,7 +27,7 @@ export function DifferenceGrid({
               <div className="flex size-11 items-center justify-center rounded-xl bg-primary/10 text-primary">
                 <item.icon className="size-5.5" />
               </div>
-              <h3 className="text-lg font-semibold text-foreground">{item.title}</h3>
+              <h3 className="font-heading text-lg font-bold text-foreground">{item.title}</h3>
               <p className="text-sm text-muted-foreground">{item.description}</p>
             </div>
           ))}

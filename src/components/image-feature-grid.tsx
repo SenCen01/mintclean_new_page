@@ -37,7 +37,7 @@ export function ImageFeatureGrid({
                 />
               </div>
               <div className="p-4">
-                <h3 className="font-semibold text-foreground">{item.title}</h3>
+                <h3 className="font-heading font-bold text-foreground">{item.title}</h3>
                 {item.description && (
                   <p className="mt-1 text-sm text-muted-foreground">{item.description}</p>
                 )}

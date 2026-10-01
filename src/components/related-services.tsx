@@ -17,7 +17,7 @@ export function RelatedServices({
   return (
     <section className="py-20">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <h2 className="text-2xl font-bold tracking-tight text-foreground sm:text-3xl">
+        <h2 className="font-heading text-2xl font-extrabold tracking-tight text-foreground sm:text-3xl">
           {title}
         </h2>
         <div className="mt-8 grid gap-6 sm:grid-cols-2">
@@ -27,7 +27,7 @@ export function RelatedServices({
               href={item.href}
               className="group flex flex-col gap-2 rounded-2xl border border-border p-6 transition-colors hover:border-primary/40 hover:bg-primary/5"
             >
-              <h3 className="flex items-center justify-between text-lg font-semibold text-foreground">
+              <h3 className="flex items-center justify-between font-heading text-lg font-bold text-foreground">
                 {item.title}
                 <ArrowRight className="size-4 text-primary opacity-0 transition-opacity group-hover:opacity-100" />
               </h3>

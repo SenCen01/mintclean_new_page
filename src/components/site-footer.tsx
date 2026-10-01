@@ -8,7 +8,7 @@ export function SiteFooter() {
     <footer className="bg-brand-dark text-white">
       <div className="mx-auto grid max-w-7xl gap-10 px-4 py-14 sm:px-6 lg:grid-cols-4 lg:px-8">
         <div className="flex flex-col gap-4 lg:col-span-2">
-          <Logo variant="dark" />
+          <Logo className="h-14" />
           <p className="max-w-sm text-sm text-white/70">
             Commercial and residential strata building maintenance across
             Greater Vancouver &mdash; professionalism, reliability, and
@@ -29,7 +29,7 @@ export function SiteFooter() {
         </div>
 
         <div>
-          <h3 className="text-sm font-semibold tracking-wide text-white uppercase">
+          <h3 className="font-heading text-sm font-bold tracking-wide text-white uppercase">
             Mint Clean
           </h3>
           <ul className="mt-4 flex flex-col gap-2.5 text-sm text-white/70">
@@ -40,7 +40,7 @@ export function SiteFooter() {
         </div>
 
         <div>
-          <h3 className="text-sm font-semibold tracking-wide text-white uppercase">
+          <h3 className="font-heading text-sm font-bold tracking-wide text-white uppercase">
             Services
           </h3>
           <ul className="mt-4 flex flex-col gap-2.5 text-sm text-white/70">
