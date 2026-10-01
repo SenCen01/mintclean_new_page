@@ -5,7 +5,14 @@ import { TrustPillars } from "@/components/trust-pillars";
 import { SectionHeading } from "@/components/section-heading";
 import { QuoteCta } from "@/components/quote-cta";
 import { ClientMarquee } from "@/components/client-marquee";
+import { Reveal, StaggerGroup, StaggerItem, AnimatedCounter } from "@/components/motion";
 import { cn } from "@/lib/utils";
+
+const stats = [
+  { value: 10000, suffix: "+", label: "Strata Units Serviced" },
+  { value: 7, suffix: "+", label: "Industries Served" },
+  { value: null, display: "24/7", label: "Emergency-Ready Availability" },
+];
 
 const clientRowOne = [
   { title: "Residential Strata Properties", image: "/images/clients/residential-strata.jpg" },
@@ -64,9 +71,30 @@ export default function Home() {
         </div>
       </section>
 
+      <section className="border-b border-border py-16">
+        <StaggerGroup className="mx-auto grid max-w-5xl grid-cols-1 gap-10 px-4 sm:grid-cols-3 sm:px-6 lg:px-8">
+          {stats.map((stat) => (
+            <StaggerItem key={stat.label} className="flex flex-col items-center text-center">
+              <span className="font-heading text-4xl font-black text-primary sm:text-5xl">
+                {stat.value !== null ? (
+                  <AnimatedCounter value={stat.value} suffix={stat.suffix} />
+                ) : (
+                  stat.display
+                )}
+              </span>
+              <span className="mt-2 text-sm font-medium text-muted-foreground">
+                {stat.label}
+              </span>
+            </StaggerItem>
+          ))}
+        </StaggerGroup>
+      </section>
+
       <section className="overflow-hidden py-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <SectionHeading eyebrow="Who We Serve" title="Our Clients" />
+          <Reveal>
+            <SectionHeading eyebrow="Who We Serve" title="Our Clients" />
+          </Reveal>
         </div>
         <div className="mt-12">
           <ClientMarquee rowOne={clientRowOne} rowTwo={clientRowTwo} />
