@@ -1,9 +1,17 @@
 "use server";
 
+import { Resend } from "resend";
+import { renderQuoteConfirmationEmail } from "@/lib/email/quote-confirmation";
+import { renderQuoteNotificationEmail } from "@/lib/email/quote-notification";
+
 export type QuoteFormState = {
   status: "idle" | "success" | "error";
   message?: string;
 };
+
+const resend = new Resend(process.env.RESEND_API_KEY);
+const FROM = `${process.env.RESEND_FROM_NAME ?? "Mint Clean"} <${process.env.RESEND_FROM_EMAIL}>`;
+const NOTIFY_TO = process.env.CONTACT_NOTIFY_EMAIL ?? "info@mintclean.ca";
 
 export async function submitQuoteRequest(
   _prevState: QuoteFormState,
@@ -25,15 +33,48 @@ export async function submitQuoteRequest(
     return { status: "error", message: "Please enter a valid email address." };
   }
 
-  // TODO: wire up to an email/CRM provider (e.g. Resend) once an API key is available.
-  console.log("Quote request received:", {
-    firstName,
-    lastName,
-    email,
-    phone,
-    propertyType,
-    details,
-  });
+  const leadDetails = { firstName, lastName, email, phone, propertyType, details };
+  const confirmation = renderQuoteConfirmationEmail(leadDetails);
+  const notification = renderQuoteNotificationEmail(leadDetails);
+
+  try {
+    const [confirmationResult, notificationResult] = await Promise.all([
+      resend.emails.send({
+        from: FROM,
+        to: email,
+        subject: confirmation.subject,
+        html: confirmation.html,
+        text: confirmation.text,
+      }),
+      resend.emails.send({
+        from: FROM,
+        to: NOTIFY_TO,
+        replyTo: email,
+        subject: notification.subject,
+        html: notification.html,
+        text: notification.text,
+      }),
+    ]);
+
+    if (confirmationResult.error || notificationResult.error) {
+      console.error(
+        "Resend error:",
+        confirmationResult.error ?? notificationResult.error
+      );
+      return {
+        status: "error",
+        message:
+          "We received your request but couldn't send a confirmation email. We'll still be in touch shortly.",
+      };
+    }
+  } catch (err) {
+    console.error("Failed to send quote request emails:", err);
+    return {
+      status: "error",
+      message:
+        "We received your request but couldn't send a confirmation email. We'll still be in touch shortly.",
+    };
+  }
 
   return {
     status: "success",
