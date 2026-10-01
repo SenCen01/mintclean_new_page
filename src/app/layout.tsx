@@ -1,8 +1,11 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono, Archivo } from "next/font/google";
+import { GoogleTagManager } from "@next/third-parties/google";
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
 import "./globals.css";
+
+const GTM_ID = "GTM-PRNRJXM8";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -35,7 +38,16 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} ${archivo.variable} h-full antialiased`}
     >
+      <GoogleTagManager gtmId={GTM_ID} />
       <body className="flex min-h-full flex-col">
+        <noscript>
+          <iframe
+            src={`https://www.googletagmanager.com/ns.html?id=${GTM_ID}`}
+            height="0"
+            width="0"
+            style={{ display: "none", visibility: "hidden" }}
+          />
+        </noscript>
         <SiteHeader />
         <main className="flex-1">{children}</main>
         <SiteFooter />
