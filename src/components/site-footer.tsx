@@ -8,7 +8,7 @@ export function SiteFooter() {
     <footer className="bg-brand-dark text-white">
       <div className="mx-auto grid max-w-7xl gap-10 px-4 py-14 sm:px-6 lg:grid-cols-4 lg:px-8">
         <div className="flex flex-col gap-4 lg:col-span-2">
-          <Logo className="h-14" />
+          <Logo className="h-16 sm:h-20" />
           <p className="max-w-sm text-sm text-white/70">
             Commercial and residential strata building maintenance across
             Greater Vancouver &mdash; professionalism, reliability, and
