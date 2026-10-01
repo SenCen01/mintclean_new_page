@@ -18,7 +18,6 @@ const clientRowTwo = [
   { title: "Shopping Centres & Strip Malls", image: "/images/clients/shopping-centres.jpg" },
   { title: "Retail Mixed Use", image: "/images/clients/retail-mixed-use.jpg" },
   { title: "Gymnasiums", image: "/images/clients/gymnasiums.jpg" },
-  { title: "…and many more" },
 ];
 
 export default function Home() {

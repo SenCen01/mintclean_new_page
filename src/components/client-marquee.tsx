@@ -3,7 +3,7 @@ import { cn } from "@/lib/utils";
 
 export type ClientType = {
   title: string;
-  image?: string;
+  image: string;
 };
 
 function MarqueeRow({
@@ -28,25 +28,17 @@ function MarqueeRow({
             key={`${client.title}-${i}`}
             className="group relative flex h-44 w-72 shrink-0 items-end overflow-hidden rounded-2xl sm:w-80"
           >
-            {client.image ? (
-              <>
-                <Image
-                  src={client.image}
-                  alt={client.title}
-                  fill
-                  sizes="320px"
-                  className="object-cover grayscale transition-all duration-500 ease-out group-hover:scale-105 group-hover:grayscale-0"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/10 to-transparent" />
-                <span className="relative p-4 text-sm font-semibold text-white">
-                  {client.title}
-                </span>
-              </>
-            ) : (
-              <div className="flex size-full items-center justify-center rounded-2xl border border-dashed border-primary/40 bg-primary/5 p-4 text-center text-sm font-semibold text-primary">
-                {client.title}
-              </div>
-            )}
+            <Image
+              src={client.image}
+              alt={client.title}
+              fill
+              sizes="320px"
+              className="object-cover grayscale transition-all duration-500 ease-out group-hover:scale-105 group-hover:grayscale-0"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/10 to-transparent" />
+            <span className="relative p-4 text-sm font-semibold text-white">
+              {client.title}
+            </span>
           </div>
         ))}
       </div>
