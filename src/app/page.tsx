@@ -4,37 +4,21 @@ import { buttonVariants } from "@/components/ui/button";
 import { TrustPillars } from "@/components/trust-pillars";
 import { SectionHeading } from "@/components/section-heading";
 import { QuoteCta } from "@/components/quote-cta";
+import { ClientMarquee } from "@/components/client-marquee";
 import { cn } from "@/lib/utils";
 
-const clientTypes = [
-  {
-    title: "Residential Strata Properties",
-    image: "/images/i08_sune-de-bruyn-aXmJ2snA31U-unsplash.jpg",
-  },
-  {
-    title: "Office Towers",
-    image: "/images/i01_austin-distel-wawEfYdpkag-unsplash-1.jpg",
-  },
-  {
-    title: "Auto Dealerships",
-    image: "/images/i03_erik-mclean-bCJqNVaKL7k-unsplash.jpg",
-  },
-  {
-    title: "Schools & Educational Institutions",
-    image: "/images/i02_changbok-ko-F8t2VGnI47I-unsplash.jpg",
-  },
-  {
-    title: "Shopping Centres & Strip Malls",
-    image: "/images/i06_marcin-kempa-3sLosN6dPoQ-unsplash.jpg",
-  },
-  {
-    title: "Retail Mixed Use",
-    image: "/images/i01_alexander-kovacs-GMGdhtYeROY-unsplash.jpg",
-  },
-  {
-    title: "Gymnasiums",
-    image: "/images/i04_humphrey-muleba-LOA2mTj1vhc-unsplash.jpg",
-  },
+const clientRowOne = [
+  { title: "Residential Strata Properties", image: "/images/clients/residential-strata.jpg" },
+  { title: "Office Towers", image: "/images/clients/office-towers.jpg" },
+  { title: "Auto Dealerships", image: "/images/clients/auto-dealerships.jpg" },
+  { title: "Schools & Educational Institutions", image: "/images/clients/schools.jpg" },
+];
+
+const clientRowTwo = [
+  { title: "Shopping Centres & Strip Malls", image: "/images/clients/shopping-centres.jpg" },
+  { title: "Retail Mixed Use", image: "/images/clients/retail-mixed-use.jpg" },
+  { title: "Gymnasiums", image: "/images/clients/gymnasiums.jpg" },
+  { title: "…and many more" },
 ];
 
 export default function Home() {
@@ -81,32 +65,12 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="py-20">
+      <section className="overflow-hidden py-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <SectionHeading eyebrow="Who We Serve" title="Our Clients" />
-          <div className="mt-12 grid grid-cols-2 gap-5 sm:grid-cols-3 lg:grid-cols-4">
-            {clientTypes.map((client) => (
-              <div
-                key={client.title}
-                className="group relative flex h-44 items-end overflow-hidden rounded-2xl"
-              >
-                <Image
-                  src={client.image}
-                  alt={client.title}
-                  fill
-                  sizes="(min-width: 1024px) 25vw, (min-width: 640px) 33vw, 50vw"
-                  className="object-cover transition-transform duration-300 group-hover:scale-105"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/10 to-transparent" />
-                <span className="relative p-4 text-sm font-semibold text-white">
-                  {client.title}
-                </span>
-              </div>
-            ))}
-            <div className="flex h-44 items-center justify-center rounded-2xl border border-dashed border-primary/40 bg-primary/5 p-4 text-center text-sm font-semibold text-primary">
-              &hellip;and many more
-            </div>
-          </div>
+        </div>
+        <div className="mt-12">
+          <ClientMarquee rowOne={clientRowOne} rowTwo={clientRowTwo} />
         </div>
       </section>
 
