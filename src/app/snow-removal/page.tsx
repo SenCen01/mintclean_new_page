@@ -83,7 +83,7 @@ export default function SnowRemovalPage() {
   return (
     <div
       className="contents"
-      style={{ cursor: "url('/images/cursors/shovel-cursor.png') 6 6, auto" }}
+      style={{ cursor: "url('/images/cursors/shovel-cursor.png') 45 53, auto" }}
     >
       <SnowHero />
 
