@@ -81,7 +81,10 @@ const serviceArea = [
 
 export default function SnowRemovalPage() {
   return (
-    <>
+    <div
+      className="contents"
+      style={{ cursor: "url('/images/cursors/shovel-cursor.png') 6 6, auto" }}
+    >
       <SnowHero />
 
       <section className="py-20">
@@ -203,6 +206,6 @@ export default function SnowRemovalPage() {
           </Reveal>
         </div>
       </section>
-    </>
+    </div>
   );
 }
